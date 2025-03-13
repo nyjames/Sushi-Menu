@@ -12,7 +12,8 @@ struct MenuView: View {
     /// Declare an array
     ///
     
-    var items:[MenuItem] = [MenuItem]()
+    @State var items:[MenuItem] = [MenuItem]()
+    var dataService = DataService()
     
     var body: some View {
         
@@ -47,10 +48,15 @@ struct MenuView: View {
             .listRowBackground(
                 Color(.brown)
                     .opacity(0.1))
+
             
         }
         .listStyle(.plain)
-        
+        .onAppear{
+            
+            items = dataService.getData()
+            
+        }
         ZStack {
         
             

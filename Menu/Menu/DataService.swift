@@ -10,6 +10,7 @@ import Foundation
 struct DataService {
     
     func getData() -> [MenuItem] {
+        
         return [
             
             MenuItem(name: "Onigiri", price: "$1.99", image_name: "onigiri"),
